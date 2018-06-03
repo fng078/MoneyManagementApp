@@ -13,6 +13,7 @@ public class SubActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub);
 
+
         // MainActivityから送られるボタンリスナーを受け取る
         LinearLayout background = findViewById(R.id.backgroundColor);
 
