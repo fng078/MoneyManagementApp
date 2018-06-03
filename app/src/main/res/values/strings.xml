@@ -18,6 +18,9 @@
     <string name="num_8">8</string>
     <string name="num_9">9</string>
 
+    <string name="decimal_point">.</string>
+    <string name="delete">DEL</string>
+
     <string name="money">9</string>
 
 </resources>
