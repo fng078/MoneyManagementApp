@@ -13,12 +13,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button sendButton = findViewById(R.id.button_Income);
-        sendButton.setOnClickListener(new View.OnClickListener() {
+        Button incomeButton = findViewById(R.id.button_Income);
+        Button spendingButton = findViewById(R.id.button_Spending);
+
+        // ボタンのリスナー
+        incomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent;
                 intent = new Intent(MainActivity.this, SubActivity.class);
+                intent.putExtra("backgroundColor", 1);
+                startActivity(intent);
+            }
+        });
+        spendingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent;
+                intent = new Intent(MainActivity.this, SubActivity.class);
+                intent.putExtra("backgroundColor", 2);
                 startActivity(intent);
             }
         });
