@@ -15,25 +15,25 @@
             android:id="@+id/button_wallet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="財布" />
+            android:text="@string/wallet" />
 
         <Button
             android:id="@+id/button_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="口座" />
+            android:text="@string/account" />
 
         <Button
             android:id="@+id/button_credit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="クレカ" />
+            android:text="@string/credit" />
 
         <Button
             android:id="@+id/button_decision"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="決定" />
+            android:text="@string/decision" />
     </LinearLayout>
 
 </LinearLayout>

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="income">収入</string>
+    <string name="spending">支出</string>
+    <string name="wallet">財布</string>
+    <string name="account">口座</string>
+    <string name="credit">クレカ</string>
+    <string name="decision">決定</string>
 </resources>
