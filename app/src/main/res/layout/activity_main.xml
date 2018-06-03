@@ -72,12 +72,14 @@
             android:id="@+id/button_Income"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#44ffff"
             android:text="収入" />
 
         <Button
             android:id="@+id/button_Spending"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#ffff4444"
             android:text="支出" />
     </LinearLayout>
 
