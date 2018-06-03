@@ -8,11 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="収入">
+    <style name="income_change_button">
         <item name="android:colorButtonNormal">#44FFFF </item>
     </style>
 
-    <style name="支出">
+    <style name="spending_change_button">
         <item name="android:colorButtonNormal">#FF4444 </item>
     </style>
 

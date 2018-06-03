@@ -72,14 +72,14 @@
             android:id="@+id/button_Income"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:theme="@style/収入" />
+            android:theme="@style/income_change_button"
             android:text="@string/income" />
 
         <Button
             android:id="@+id/button_Spending"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:theme="@style/支出" />
+            android:theme="@style/spending_change_button"
             android:text="@string/spending" />
     </LinearLayout>
 
