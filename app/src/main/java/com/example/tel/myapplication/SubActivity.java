@@ -10,9 +10,9 @@ import android.widget.TextView;
 
 public class SubActivity extends AppCompatActivity {
 
-    //入力された金額を格納するための配列
+    // 入力された金額を格納するための配列
     String displayNumber;
-    //グローバル変数を宣言
+    // グローバル変数を宣言
     TextView text_money;
     Button Num_0_Button;
     Button Num_1_Button;
@@ -29,6 +29,7 @@ public class SubActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub);
+        displayNumber = "";
         setFindById();
 
         // MainActivityから送られるボタンリスナーを受け取る
@@ -36,7 +37,7 @@ public class SubActivity extends AppCompatActivity {
 
         int backgroundColorFlag = getIntent().getIntExtra("backgroundColor", 0);
 
-        //収入、支出が押されたとき背景が変わる
+        //　収入、支出が押されたとき背景が変わる
         if (backgroundColorFlag == 1) {
             background.setBackgroundColor(ContextCompat.getColor(this, R.color.colorIncome));
         } else if (backgroundColorFlag == 2) {
@@ -45,7 +46,6 @@ public class SubActivity extends AppCompatActivity {
             // TODO: エラー処理
         }
 
-        displayNumber = "";
         setNumberCalculatorListener();
 
         Button returnButton = findViewById(R.id.button_decision);
@@ -57,8 +57,10 @@ public class SubActivity extends AppCompatActivity {
         });
     }
 
-    //クリックイベント関数（数字用）
-    private  void setNumberCalculatorListener() {
+    /**
+     * クリックイベント関数（数字用）
+     */
+    private void setNumberCalculatorListener() {
         Num_0_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,7 +133,9 @@ public class SubActivity extends AppCompatActivity {
         });
     }
 
-    //ID取得？管理？用関数
+    /**
+     * ID取得？管理？用関数
+     */
     private void setFindById() {
         text_money = findViewById(R.id.text_num);
         Num_0_Button = findViewById(R.id.num_0);
