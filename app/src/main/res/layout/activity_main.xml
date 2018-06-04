@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0円"
+            android:text="@string/money"
             android:textSize="24sp" />
 
     </LinearLayout>
@@ -39,7 +39,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0円"
+            android:text="@string/money"
             android:textSize="24sp" />
 
     </LinearLayout>
@@ -58,7 +58,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0円"
+            android:text="@string/money"
             android:textSize="24sp" />
 
     </LinearLayout>

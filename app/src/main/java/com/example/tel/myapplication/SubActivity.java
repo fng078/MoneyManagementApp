@@ -1,13 +1,18 @@
 package com.example.tel.myapplication;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SubActivity extends AppCompatActivity {
 
@@ -55,10 +60,45 @@ public class SubActivity extends AppCompatActivity {
 
         setNumberCalculatorListener();
 
+
+        SharedPreferences money_data = getSharedPreferences("money_data", MODE_PRIVATE);
+        SharedPreferences.Editor money_data_editor = money_data.edit();
+
+        RadioGroup radioGroup = findViewById(R.id.radio_group);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int id) {
+                if (id == -1) {
+                    //TODO:何も押されていないときの処理
+                    Toast.makeText(SubActivity.this,
+                            "クリアされました",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else if(findViewById(id) == wallet_Button){
+
+                }
+                else if(findViewById(id) == account_Button){
+
+                }
+                else if(findViewById(id) == credit_Button){
+
+                }
+                else {
+                    //TODO: エラー処理
+
+                }
+            }
+        });
+
         Button returnButton = findViewById(R.id.button_decision);
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+//                Log.d("push", String.valueOf(money_num));
+                Intent intent = new Intent();
+                intent.putExtra("result", text_money.getText().toString());
+                setResult(RESULT_OK, intent);
                 finish();
             }
         });
