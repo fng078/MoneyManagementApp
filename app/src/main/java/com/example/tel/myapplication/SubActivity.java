@@ -1,12 +1,12 @@
 package com.example.tel.myapplication;
 
-import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class SubActivity extends AppCompatActivity {
@@ -16,9 +16,11 @@ public class SubActivity extends AppCompatActivity {
 
     // グローバル変数を宣言
     TextView text_money;
-    Button wallet_Button;
-    Button account_Button;
-    Button credit_Button;
+
+    RadioButton wallet_Button;
+    RadioButton account_Button;
+    RadioButton credit_Button;
+
     Button Num_0_Button;
     Button Num_1_Button;
     Button Num_2_Button;
@@ -51,7 +53,6 @@ public class SubActivity extends AppCompatActivity {
             // TODO: エラー処理
         }
 
-        ChangeColorButton();
         setNumberCalculatorListener();
 
         Button returnButton = findViewById(R.id.button_decision);
@@ -59,34 +60,6 @@ public class SubActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-            }
-        });
-    }
-
-    /**
-     * 財布、口座、クレカのボタンが押されたら色変更
-     * 現状：財布→青，口座→緑，クレカ→赤
-     */
-    private void ChangeColorButton() {
-        wallet_Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO: 押されたボタンの色を変える
-                wallet_Button.setBackgroundColor(Color.rgb(0, 0, 255));
-            }
-        });
-        account_Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO: 押されたボタンの色を変える
-                account_Button.setBackgroundColor(Color.rgb(0, 255, 0));
-            }
-        });
-        credit_Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO: 押されたボタンの色を変える
-                credit_Button.setBackgroundColor(Color.rgb(255, 0, 0));
             }
         });
     }
@@ -172,9 +145,9 @@ public class SubActivity extends AppCompatActivity {
      */
     private void setFindById() {
 
-        wallet_Button = findViewById(R.id.button_wallet);
-        account_Button = findViewById(R.id.button_account);
-        credit_Button = findViewById(R.id.button_credit);
+        wallet_Button = findViewById(R.id.RadioButton_wallet);
+        account_Button = findViewById(R.id.RadioButton_account);
+        credit_Button = findViewById(R.id.RadioButton_credit);
 
         text_money = findViewById(R.id.text_num);
 
