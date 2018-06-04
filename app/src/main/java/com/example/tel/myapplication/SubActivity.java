@@ -12,6 +12,7 @@ public class SubActivity extends AppCompatActivity {
 
     // 入力された金額を格納するための配列
     String displayNumber;
+
     // グローバル変数を宣言
     TextView text_money;
     Button Num_0_Button;
