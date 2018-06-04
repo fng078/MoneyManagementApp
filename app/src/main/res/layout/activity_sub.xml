@@ -8,28 +8,40 @@
     android:orientation="vertical"
     tools:context="SubActivity">
 
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button_wallet"
+        <RadioGroup
+            android:id="@+id/radio_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/wallet" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button_account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/account" />
+            <RadioButton
+                android:id="@+id/RadioButton_wallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet"
+                android:textSize="26sp" ></RadioButton>
 
-        <Button
-            android:id="@+id/button_credit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/credit" />
+            <RadioButton
+                android:id="@+id/RadioButton_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/account"
+                android:textSize="26sp" ></RadioButton>
+
+            <RadioButton
+                android:id="@+id/RadioButton_credit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/credit"
+                android:textSize="26sp" ></RadioButton>
+
+        </RadioGroup>
 
         <Button
             android:id="@+id/button_decision"
@@ -44,24 +56,23 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/text_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/money"
-            android:id="@+id/text_num"
-            android:textSize="26sp"/>
+            android:textSize="26sp" />
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="円"
-            android:id="@+id/textView"/>
+            android:text="円" />
     </LinearLayout>
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <!-- 1行目 -->
         <TableRow
@@ -71,21 +82,23 @@
             <Button
                 android:id="@+id/num_7"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="@string/num_7"/>
+                android:layout_weight="1"
+                android:text="@string/num_7" />
+
             <Button
                 android:id="@+id/num_8"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="@string/num_8"/>
+                android:layout_weight="1"
+                android:text="@string/num_8" />
+
             <Button
                 android:id="@+id/num_9"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="@string/num_9"/>
+                android:layout_weight="1"
+                android:text="@string/num_9" />
         </TableRow>
 
         <!-- 2行目 -->
@@ -96,21 +109,23 @@
             <Button
                 android:id="@+id/num_4"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="@string/num_4"/>
+                android:layout_weight="1"
+                android:text="@string/num_4" />
+
             <Button
                 android:id="@+id/num_5"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="@string/num_5"/>
+                android:layout_weight="1"
+                android:text="@string/num_5" />
+
             <Button
                 android:id="@+id/num_6"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="@string/num_6"/>
+                android:layout_weight="1"
+                android:text="@string/num_6" />
         </TableRow>
 
         <!-- 3行目 -->
@@ -121,21 +136,23 @@
             <Button
                 android:id="@+id/num_1"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="@string/num_1"/>
+                android:layout_weight="1"
+                android:text="@string/num_1" />
+
             <Button
                 android:id="@+id/num_2"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="@string/num_2"/>
+                android:layout_weight="1"
+                android:text="@string/num_2" />
+
             <Button
                 android:id="@+id/num_3"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="@string/num_3"/>
+                android:layout_weight="1"
+                android:text="@string/num_3" />
         </TableRow>
 
         <!-- 4行目 -->

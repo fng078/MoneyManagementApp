@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class SubActivity extends AppCompatActivity {
@@ -15,6 +16,11 @@ public class SubActivity extends AppCompatActivity {
 
     // グローバル変数を宣言
     TextView text_money;
+
+    RadioButton wallet_Button;
+    RadioButton account_Button;
+    RadioButton credit_Button;
+
     Button Num_0_Button;
     Button Num_1_Button;
     Button Num_2_Button;
@@ -138,7 +144,13 @@ public class SubActivity extends AppCompatActivity {
      * ID取得？管理？用関数
      */
     private void setFindById() {
+
+        wallet_Button = findViewById(R.id.RadioButton_wallet);
+        account_Button = findViewById(R.id.RadioButton_account);
+        credit_Button = findViewById(R.id.RadioButton_credit);
+
         text_money = findViewById(R.id.text_num);
+
         Num_0_Button = findViewById(R.id.num_0);
         Num_1_Button = findViewById(R.id.num_1);
         Num_2_Button = findViewById(R.id.num_2);
@@ -149,5 +161,6 @@ public class SubActivity extends AppCompatActivity {
         Num_7_Button = findViewById(R.id.num_7);
         Num_8_Button = findViewById(R.id.num_8);
         Num_9_Button = findViewById(R.id.num_9);
+
     }
 }
