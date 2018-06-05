@@ -1,7 +1,7 @@
 package com.example.tel.myapplication;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
+//import android.content.SharedPreferences;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,20 +39,26 @@ public class SubActivity extends AppCompatActivity {
 
     Button returnButton;
 
+    Intent intent = new Intent();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub);
         displayNumber = ""; // 表示する文字列を初期化
         setFindById();
-        // todo:関数宣言
+
+        // 関数宣言
         setNumberCalculatorListener();
         setChangeBackgroundColor();
         setRadioButtonBehavior();
         setReturnButtonBehavior();
+
         // TODO: SharedPreferencesによる処理追加
-        SharedPreferences money_data = getSharedPreferences("money_data", MODE_PRIVATE);
-        SharedPreferences.Editor money_data_editor = money_data.edit();
+//        money_data = getSharedPreferences("money_data", MODE_PRIVATE);
+//        SharedPreferences.Editor money_data_editor = money_data.edit();
+//        money_data_editor.putString("input", displayNumber);
+//        money_data_editor.apply();
     }
 
     /**
@@ -171,7 +177,7 @@ public class SubActivity extends AppCompatActivity {
 
         background = findViewById(R.id.backgroundColor);
 
-        returnButton  = findViewById(R.id.button_decision);
+        returnButton = findViewById(R.id.button_decision);
 
     }
 
@@ -179,7 +185,7 @@ public class SubActivity extends AppCompatActivity {
      * ラジオボタン系のロジックを記述
      * TODO: 何をしてるかを記述
      */
-    private void setRadioButtonBehavior(){
+    private void setRadioButtonBehavior() {
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int id) {
@@ -189,11 +195,11 @@ public class SubActivity extends AppCompatActivity {
                             "クリアされました",
                             Toast.LENGTH_SHORT).show();
                 } else if (findViewById(id) == wallet_Button) {
-
+                    intent.putExtra("what", wallet_Button.getText().toString());
                 } else if (findViewById(id) == account_Button) {
-
+                    intent.putExtra("what", account_Button.getText().toString());
                 } else if (findViewById(id) == credit_Button) {
-
+                    intent.putExtra("what", credit_Button.getText().toString());
                 } else {
                     //TODO: エラー処理
                 }
@@ -210,7 +216,10 @@ public class SubActivity extends AppCompatActivity {
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+//                String str = money_data.getString("input", "0");
+//                if(!str.equals("0")) {
+//                    text_money.setText(str);
+//                }
                 intent.putExtra("result", text_money.getText().toString());
                 setResult(RESULT_OK, intent);
                 finish();
