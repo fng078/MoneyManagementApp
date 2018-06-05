@@ -21,29 +21,34 @@
 
             <RadioButton
                 android:id="@+id/RadioButton_wallet"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="false"
                 android:text="@string/wallet"
-                android:textSize="26sp" ></RadioButton>
+                android:textSize="26sp" />
 
             <RadioButton
                 android:id="@+id/RadioButton_account"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/account"
-                android:textSize="26sp" ></RadioButton>
+                android:textSize="26sp" />
 
             <RadioButton
                 android:id="@+id/RadioButton_credit"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/credit"
-                android:textSize="26sp" ></RadioButton>
+                android:textSize="26sp" />
 
         </RadioGroup>
 
         <Button
             android:id="@+id/button_decision"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/decision" />
@@ -65,7 +70,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="円" />
+            android:text="@string/en" />
     </LinearLayout>
 
     <TableLayout
@@ -80,6 +85,7 @@
 
             <Button
                 android:id="@+id/num_7"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -87,6 +93,7 @@
 
             <Button
                 android:id="@+id/num_8"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -94,6 +101,7 @@
 
             <Button
                 android:id="@+id/num_9"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -107,6 +115,7 @@
 
             <Button
                 android:id="@+id/num_4"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -114,6 +123,7 @@
 
             <Button
                 android:id="@+id/num_5"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -121,6 +131,7 @@
 
             <Button
                 android:id="@+id/num_6"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -134,6 +145,7 @@
 
             <Button
                 android:id="@+id/num_1"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -141,6 +153,7 @@
 
             <Button
                 android:id="@+id/num_2"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -148,6 +161,7 @@
 
             <Button
                 android:id="@+id/num_3"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -161,6 +175,7 @@
 
             <Button
                 android:id="@+id/num_0"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -168,6 +183,7 @@
 
             <Button
                 android:id="@+id/decimal_point"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -175,6 +191,7 @@
 
             <Button
                 android:id="@+id/del"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

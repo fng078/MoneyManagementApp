@@ -64,23 +64,26 @@
     </LinearLayout>
 
     <LinearLayout
+        style="?android:attr/buttonBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/button_Income"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:theme="@style/income_change_button"
-            android:text="@string/income" />
+            android:text="@string/income"
+            android:theme="@style/income_change_button" />
 
         <Button
             android:id="@+id/button_Spending"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:theme="@style/spending_change_button"
-            android:text="@string/spending" />
+            android:text="@string/spending"
+            android:theme="@style/spending_change_button" />
     </LinearLayout>
 
 </LinearLayout>

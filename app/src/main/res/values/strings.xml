@@ -22,5 +22,6 @@
     <string name="delete">DEL</string>
 
     <string name="money">0</string>
+    <string name="en">円</string>
 
 </resources>
