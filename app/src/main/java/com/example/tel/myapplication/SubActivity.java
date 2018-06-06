@@ -1,5 +1,7 @@
 package com.example.tel.myapplication;
 
+import android.content.Intent;
+//import android.content.SharedPreferences;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,16 +9,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SubActivity extends AppCompatActivity {
 
-    // 入力された金額を格納するための配列
     String displayNumber;
 
-    // グローバル変数を宣言
     TextView text_money;
 
+    RadioGroup radioGroup;
     RadioButton wallet_Button;
     RadioButton account_Button;
     RadioButton credit_Button;
@@ -32,19 +35,39 @@ public class SubActivity extends AppCompatActivity {
     Button Num_8_Button;
     Button Num_9_Button;
 
+    LinearLayout background;
+
+    Button returnButton;
+
+    Intent intent = new Intent();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub);
-        displayNumber = "";
+        displayNumber = ""; // 表示する文字列を初期化
         setFindById();
 
+        // 関数宣言
+        setNumberCalculatorListener();
+        setChangeBackgroundColor();
+        setRadioButtonBehavior();
+        setReturnButtonBehavior();
+
+        // TODO: SharedPreferencesによる処理追加
+//        money_data = getSharedPreferences("money_data", MODE_PRIVATE);
+//        SharedPreferences.Editor money_data_editor = money_data.edit();
+//        money_data_editor.putString("input", displayNumber);
+//        money_data_editor.apply();
+    }
+
+    /**
+     * 収入の時は背景を青色に変化させる
+     * 支出の時は背景を赤色に変化させる
+     */
+    private void setChangeBackgroundColor() {
         // MainActivityから送られるボタンリスナーを受け取る
-        LinearLayout background = findViewById(R.id.backgroundColor);
-
         int backgroundColorFlag = getIntent().getIntExtra("backgroundColor", 0);
-
-        //　収入、支出が押されたとき背景が変わる
         if (backgroundColorFlag == 1) {
             background.setBackgroundColor(ContextCompat.getColor(this, R.color.colorIncome));
         } else if (backgroundColorFlag == 2) {
@@ -52,16 +75,6 @@ public class SubActivity extends AppCompatActivity {
         } else {
             // TODO: エラー処理
         }
-
-        setNumberCalculatorListener();
-
-        Button returnButton = findViewById(R.id.button_decision);
-        returnButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
     }
 
     /**
@@ -141,10 +154,10 @@ public class SubActivity extends AppCompatActivity {
     }
 
     /**
-     * ID取得？管理？用関数
+     * LayoutのId取得
      */
     private void setFindById() {
-
+        radioGroup = findViewById(R.id.radio_group);
         wallet_Button = findViewById(R.id.RadioButton_wallet);
         account_Button = findViewById(R.id.RadioButton_account);
         credit_Button = findViewById(R.id.RadioButton_credit);
@@ -162,5 +175,55 @@ public class SubActivity extends AppCompatActivity {
         Num_8_Button = findViewById(R.id.num_8);
         Num_9_Button = findViewById(R.id.num_9);
 
+        background = findViewById(R.id.backgroundColor);
+
+        returnButton = findViewById(R.id.button_decision);
+
+    }
+
+    /**
+     * ラジオボタン系のロジックを記述
+     * TODO: 何をしてるかを記述
+     */
+    private void setRadioButtonBehavior() {
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int id) {
+                if (id == -1) {
+                    // TODO:何も押されていないときの処理
+                    Toast.makeText(SubActivity.this,
+                            "クリアされました",
+                            Toast.LENGTH_SHORT).show();
+                } else if (findViewById(id) == wallet_Button) {
+                    intent.putExtra("what", wallet_Button.getText().toString());
+                } else if (findViewById(id) == account_Button) {
+                    intent.putExtra("what", account_Button.getText().toString());
+                } else if (findViewById(id) == credit_Button) {
+                    intent.putExtra("what", credit_Button.getText().toString());
+                } else {
+                    //TODO: エラー処理
+                }
+            }
+        });
+    }
+
+    /**
+     * 戻るボタンを押した時のロジックを記述
+     * 表示されているテキストをMainActivity.javaに返す
+     * 画面遷移する
+     */
+    private void setReturnButtonBehavior() {
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String str = money_data.getString("input", "0");
+//                if(!str.equals("0")) {
+//                    text_money.setText(str);
+//                }
+                intent.putExtra("result", text_money.getText().toString());
+                setResult(RESULT_OK, intent);
+                finish();
+            }
+        });
     }
 }
